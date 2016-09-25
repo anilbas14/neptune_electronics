@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $sql = "select * from test";
+  $item = DB::select($sql);
+ 
+  die($item[0]->name);
+    
+ //   return view('welcome');
 });
