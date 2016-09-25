@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-  $sql = "select * from test";
+  $sql = "select * from products";
   $item = DB::select($sql);
  
   die($item[0]->name);
