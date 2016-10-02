@@ -13,12 +13,8 @@
 
 Route::resource('products', 'ProductController');
 
+Route::post('/cart', 'Front@cart');
+
 Route::get('/', function () {
-//  $sql = "select * from products";
-//  $item = DB::select($sql);
- 
-//  die($item[0]->name);
   return view('home');
-    
- //   return view('welcome');
 });
