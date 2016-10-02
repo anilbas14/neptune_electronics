@@ -11,11 +11,14 @@
 |
 */
 
+Route::resource('products', 'ProductController');
+
 Route::get('/', function () {
-  $sql = "select * from products";
-  $item = DB::select($sql);
+//  $sql = "select * from products";
+//  $item = DB::select($sql);
  
-  die($item[0]->name);
+//  die($item[0]->name);
+  return view('home');
     
  //   return view('welcome');
 });
