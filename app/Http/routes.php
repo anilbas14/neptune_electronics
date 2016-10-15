@@ -12,8 +12,11 @@
 */
 
 Route::resource('products', 'ProductController');
-
-Route::post('/cart', 'Front@cart');
+Route::get('/cart', 'Front@cartget');
+Route::post('/cart', 'Front@cartpost');
+Route::post('/clear-cart', 'Front@clearcart');
+Route::post('/checkout', 'Front@checkout');
+Route::post('/remove', 'Front@remove');
 
 Route::get('/', function () {
   return view('home');

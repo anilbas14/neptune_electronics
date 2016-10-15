@@ -12,7 +12,6 @@
                 <input type="hidden" name="product" value="{{$product}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit">
- <!--                <i class="fa fa-shopping-cart"></i> -->
                   Add to cart
                 </button>
               </form>

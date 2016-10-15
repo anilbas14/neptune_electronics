@@ -14,7 +14,7 @@ use Cart;
 
 class Front extends Controller
 {
-    public function cart() {
+    public function cartpost() {
     if (Request::isMethod('post')) {
         $product_id = Request::get('product_id');
         $product = Product::find($product_id);
@@ -22,8 +22,23 @@ class Front extends Controller
     }
 
     $cart = Cart::content();
-
     return view('cart', array('cart' => $cart));
-}
+    }
+    
+    public function cartget() {
+    return view('cart', array('cart' => Cart::content()));
+    }
+    
+    public function clearcart() {
+    Cart::destroy();
+    return redirect()->route('products.index');
+    }
+    
+    public function checkout() {
+    return view('checkout', array('cart' => Cart::content()));
+    }
+    
+    
+    
     //
 }
