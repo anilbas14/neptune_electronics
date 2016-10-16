@@ -1,8 +1,8 @@
-@extends('layouts.layout1')
+@extends('layouts.layout2')
 
 @section('content')
 <h3>Products in cart</h3>
-              @foreach($cart as $product)
+              @foreach(Cart::content() as $product)
               <div>
               <h4>{{{ $product->name }}}</h4>
               Price per unit: ${{{ $product->price }}} <br>

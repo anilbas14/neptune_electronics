@@ -3,8 +3,9 @@
 @section('content')
               <div>
               <h3>{{{ $product->name }}}</h3>
+              <img width="300" height="300" src='{{{$product->image}}}' alt="">
               Description: {{{ $product->description }}} <br>
-              Price: ${{{ $product->price }}} <br>
+              Price: ${{{ $product->retail_price }}} <br>
               @if ($product->quantity > 0)
               in stock
               <form method="POST" action="{{url('cart')}}">

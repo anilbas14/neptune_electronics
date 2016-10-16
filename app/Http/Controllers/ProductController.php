@@ -15,9 +15,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all()->sortByDesc("created_at");
+        $input = $request->all();	
+		if ($request->has('search'))
+          {
+          	$search = $request['search'];
+          	$field = $request['field'];          	
+            $products = Product::where($field, 'LIKE', '%'.$search.'%')->get();
+          } else {
+	    	$products = Product::all();
+          }
         return view('index')->with('products', $products);
         //
     }

@@ -1,4 +1,4 @@
-@extends('layouts.layout1')
+@extends('layouts.layout2')
 
 @section('content')
 <h3>Checkout</h3>
